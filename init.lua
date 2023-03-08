@@ -7,5 +7,6 @@ load('user.settings')
 load('user.commands')
 load('user.keymaps')
 load('user.plugins')
+load('user.colors')
 
 pcall(vim.cmd.colorscheme, 'tokyonight')
