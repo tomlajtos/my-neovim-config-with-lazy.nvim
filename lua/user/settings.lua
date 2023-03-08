@@ -23,7 +23,9 @@ vim.opt.breakindent = true
 
 -- Decrease update time
 vim.opt.updatetime = 200 --50
-vim.opt.signcolumn = 'yes'
+
+-- Keep signcolumn on by default
+vim.wo.signcolumn = 'yes'
 
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
@@ -32,8 +34,15 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+
+-- Sync clipboard between OS and Neovim.
+vim.opt.clipboard = 'unnamedplus'
+
+-- Set color column as a limit of line width
 -- vim.opt.colorcolumn = "90"
+
+-- Set thick cursor in insert mode
 -- vim.opt.guicursor = ""
 
 -- Set completeopt to have a better completion experience
--- vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = 'menuone,noselect'
