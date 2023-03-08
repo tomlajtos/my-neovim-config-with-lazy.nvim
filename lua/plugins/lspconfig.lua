@@ -110,8 +110,8 @@ function user.setup_mason()
 end
 
 function user.on_attach()
-  local bufmap = function(mode, lhs, rhs)
-    local opts = {buffer = true}
+  local bufmap = function(mode, lhs, rhs, desc)
+    local opts = {buffer = true, desc = desc}
     vim.keymap.set(mode, lhs, rhs, opts)
   end
 
@@ -119,7 +119,7 @@ function user.on_attach()
   -- For example :help vim.lsp.buf.hover()
 
   bufmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
-  bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+  bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', 'go to definition')
   bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
   bufmap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
   bufmap('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
