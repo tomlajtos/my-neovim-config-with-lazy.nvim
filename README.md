@@ -1,4 +1,4 @@
-# My neovim config using [lazy.nvim](https://github.com/folke/lazy.nvim)
+# My Neovim Config Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 This config is heavily based on [VonHeikemen/nvim-starter](https://github.com/VonHeikemen/nvim-starter) [modular](https://github.com/VonHeikemen/nvim-starter/tree/05-modular) config.
 
