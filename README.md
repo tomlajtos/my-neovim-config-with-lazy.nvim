@@ -1,6 +1,6 @@
 # My neovim config using [lazy.nvim](https://github.com/folke/lazy.nvim)
 
-This config is haevily based on [VonHeikemen/nvim-starter](https://github.com/VonHeikemen/nvim-starter) [modular](https://github.com/VonHeikemen/nvim-starter/tree/05-modular) config.
+This config is heavily based on [VonHeikemen/nvim-starter](https://github.com/VonHeikemen/nvim-starter) [modular](https://github.com/VonHeikemen/nvim-starter/tree/05-modular) config.
 
 It also adopts configurations from: 
 - [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
