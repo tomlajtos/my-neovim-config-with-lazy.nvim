@@ -1,4 +1,12 @@
-# Neovim Starter
+# My neovim config using [lazy.nvim](https://github.com/folke/lazy.nvim)
+
+This config is haevily based on [VonHeikemen/nvim-starter](https://github.com/VonHeikemen/nvim-starter) [modular](https://github.com/VonHeikemen/nvim-starter/tree/05-modular) config.
+
+It also adopts configurations from: 
+- [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+- [ThePrimeagen/init.lua](https://github.com/ThePrimeagen/init.lua)
+
+## Neovim Starter
 
 Base configuration for Neovim. For those looking to make Neovim their new main editor. Here you'll find a popular combination of plugin to make your experience a little bit better.
 
