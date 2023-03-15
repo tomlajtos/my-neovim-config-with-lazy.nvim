@@ -1,6 +1,6 @@
 function JoinTheDarkSide(color)
 	require('tokyonight').setup({
-		-- disable_background = true,
+	disable_background = true,
 		style = 'night',
 		light_style = 'day',
 		transparent = true,

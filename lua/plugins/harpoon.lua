@@ -1,31 +1,22 @@
-local Plugin = { 'theprimeagen/harpoon' }
-
-Plugin.name = 'harpoon'
+local Plugin = { "theprimeagen/harpoon" }
+-- Plugin.name = 'harpoon'
 Plugin.dependencies = {
-	{ 'nvim-lua/plenary.nvim' },
+	{ "nvim-lua/plenary.nvim" },
 }
 
 function Plugin.init()
 	local mark = require("harpoon.mark")
 	local ui = require("harpoon.ui")
+	local map = require("user/keymaps").map
 
-	vim.keymap.set("n", "<leader>a", mark.add_file)
-	vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
-
-	-- vim.keymap.set("n", "<C-a><C-a>", function() ui.nav_file(1) end)
-	-- vim.keymap.set("n", "<C-s><C-s>", function() ui.nav_file(2) end)
-	-- vim.keymap.set("n", "<C-d><C-d>", function() ui.nav_file(3) end)
-	-- vim.keymap.set("n", "<C-f><C-f>", function() ui.nav_file(4) end)
-	-- vim.keymap.set("n", "<C-g><C-g>", function() ui.nav_file(5) end)
-	-- vim.keymap.set("n", "<C-h><C-h>", function() ui.nav_file(6) end)
-
-	vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end)
-	vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end)
-	vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end)
-	vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end)
-	vim.keymap.set("n", "<leader>5", function() ui.nav_file(5) end)
-	vim.keymap.set("n", "<leader>6", function() ui.nav_file(6) end)
- end
+	map("n", "<C-e>", ui.toggle_quick_menu, "toggle quick nav-menu", Plugin.name)
+	map("n", "<leader>a", mark.add_file, "[a]dd file to quick nav-menu", Plugin.name)
+	map("n", "<leader>1", function() ui.nav_file(1) end, "[a]dd file to menu, i-1", Plugin.name)
+	map("n", "<leader>2", function() ui.nav_file(2) end, "[a]dd file to menu, i-2", Plugin.name)
+	map("n", "<leader>3", function() ui.nav_file(3) end, "[a]dd file to menu, i-3", Plugin.name)
+	map("n", "<leader>4", function() ui.nav_file(4) end, "[a]dd file to menu, i-4", Plugin.name)
+	map("n", "<leader>5", function() ui.nav_file(5) end, "[a]dd file to menu, i-5", Plugin.name)
+	map("n", "<leader>6", function() ui.nav_file(6) end, "[a]dd file to menu, i-6", Plugin.name)
+end
 
 return Plugin
-
