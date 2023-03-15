@@ -1,8 +1,19 @@
+local M = {}
+
+M.map= function(mode, lhs, rhs, desc, plugin)
+	-- function M.setkey(mode, lhs, rhs, desc, plugin)
+	if plugin then
+		desc = plugin .. ": " .. desc
+	end
+	vim.keymap.set(mode, lhs, rhs, { desc = desc })
+end
+
+local map = M.map
+
 -- Set leader to "<space>"
 vim.g.mapleader = ' '
 
--- Set keymap for nvim default file browser
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open Netrw explorer" })
+map("n", "<leader>pv", vim.cmd.Ex,"Open Netrw explorer")
 
 -- Shortcuts
 vim.keymap.set({ 'n', 'x', 'o' }, '<leader>h', '^')
@@ -10,9 +21,7 @@ vim.keymap.set({ 'n', 'x', 'o' }, '<leader>l', 'g_')
 -- vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
 
 -- Basic clipboard interaction
--- vim.keymap.set({'n', 'x'}, 'cp', '"+y')
--- vim.keymap.set({'n', 'x'}, 'cv', '"+p')
--- yanked pattern is put in the system clipboard (asbjornHaland)
+-- yanked pattern is put in the system clipboard --(asbjornHaland)
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
@@ -20,11 +29,10 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- vim.keymap.set({'n', 'x'}, 'x', '"_x')
 
 -- Commands
--- vim.keymap.set('n', '<leader>w', '<cmd>write<cr>')
+-- Set basic remaps for write/quit/back to normal from insert
 vim.keymap.set("n", "<leader>w", vim.cmd.write)
 vim.keymap.set('n', '<leader>bq', '<cmd>bdelete<cr>')
 vim.keymap.set('n', '<leader>bl', '<cmd>buffer #<cr>')
--- Set basic remaps for write/quit/back to normal from insert
 vim.keymap.set("n", "<leader>q", vim.cmd.quit)
 vim.keymap.set("i", "jj", "<Esc>")
 --vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -45,7 +53,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- WTF is vim-with-me??? keymaps for that
+-- WTF is vim-with-me?? keymaps for that
 --vim.keymap.set("n", "<leader>vwm", function()
 --    require("vim-with-me").StartVimWithMe()
 --end)
@@ -79,3 +87,5 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 --vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/tomlajtos/packer.lua<CR>");
 --vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+
+return M
