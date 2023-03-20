@@ -12,9 +12,9 @@ vim.opt.incsearch = true
 vim.opt.wrap = true --false
 
 -- Set tab
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = false
 
 vim.opt.smartindent = true
@@ -22,7 +22,9 @@ vim.opt.smartindent = true
 vim.opt.breakindent = true
 
 -- Decrease update time
-vim.opt.updatetime = 200 --50
+vim.o.updatetime = 250 --50
+vim.o.timeout = true
+vim.o.timeoutlen = 300
 
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
