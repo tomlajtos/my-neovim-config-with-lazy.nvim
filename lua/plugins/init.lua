@@ -5,6 +5,7 @@ local Plugins = {
   {'editorconfig/editorconfig-vim'},
   {'kyazdani42/nvim-web-devicons', lazy = true},
   {'numToStr/Comment.nvim', config = true, event = 'VeryLazy'},
+	{'tpope/vim-sleuth'},
   -- Themes
   {'folke/tokyonight.nvim'},
   {'navarasu/onedark.nvim'},
