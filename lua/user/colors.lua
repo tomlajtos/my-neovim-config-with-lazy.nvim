@@ -1,12 +1,12 @@
 function JoinTheDarkSide(color)
 	require('tokyonight').setup({
-	disable_background = true,
+		disable_background = true,
 		style = 'night',
 		light_style = 'day',
 		transparent = true,
 		styles = {
-		   sidebars = "transparent",
-		   floats = "transparent",
+			sidebars = "transparent",
+			floats = "transparent",
 		}
 	})
 	color = color or 'tokyonight'
@@ -21,14 +21,14 @@ function LetItShine()
 		light_style = 'day',
 		transparent = false,
 		styles = {
-		   sidebars = "transparent",
-		   floats = "transparent",
+			sidebars = "transparent",
+			floats = "transparent",
 		}
 	})
 	vim.cmd.colorscheme('tokyonight-day')
 end
 
-vim.keymap.set("n", "<leader>csl",function() LetItShine() end)
-vim.keymap.set("n", "<leader>csd",function() JoinTheDarkSide() end)
+vim.keymap.set("n", "<F11>", function() LetItShine() end)
+vim.keymap.set("n", "<F12>", function() JoinTheDarkSide() end)
 
 JoinTheDarkSide()

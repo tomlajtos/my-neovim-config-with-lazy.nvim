@@ -24,7 +24,7 @@ vim.opt.breakindent = true
 -- Decrease update time
 vim.o.updatetime = 250 --50
 vim.o.timeout = true
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 500
 
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
