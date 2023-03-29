@@ -9,4 +9,4 @@ load('user.keymaps')
 load('user.plugins')
 load('user.colors')
 
-pcall(vim.cmd.colorscheme, 'tokyonight')
+pcall(vim.cmd.colorscheme, 'onedark')
