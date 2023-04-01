@@ -17,7 +17,7 @@ end
 function lazy.setup(plugins)
   -- You can "comment out" the line below after lazy.nvim is installed
   -- lazy.install(lazy.path)
-vim.opt.swapfile = false
+  vim.opt.swapfile = false
 
   vim.opt.rtp:prepend(lazy.path)
   require('lazy').setup(plugins, lazy.opts)
@@ -26,5 +26,4 @@ end
 lazy.path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 lazy.opts = {}
 
-lazy.setup({{import = 'plugins'}})
-
+lazy.setup({ { import = 'plugins' } })

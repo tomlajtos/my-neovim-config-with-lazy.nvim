@@ -1,24 +1,24 @@
 -- find the first index with value (@val) in a table
-function table.find(tbl, val)
+function Get_style_index(tbl, val)
 	for i, v in ipairs(tbl) do
 		if v == val then
 			return i
 		end
 	end
-	return nil
+	return 1 --nil
 end
 
-function toggle_style(colors, style_list)
+function Toggle_style(colors, style_list)
 	local config_str = colors .. ".config"
 	print('togglef conf str:', config_str)
-	if vim.g.color_name == colors then
+	if vim.g.colors_name == colors then
 		print('togglef colors arg:', colors)
 		style = require(config_str).options.style
 		print('toggelf style in if:', style)
 		-- else
 		-- 	style = default_style
 	end
-	local style_index = table.find(style_list, style) --or 1
+	local style_index = Get_style_index(style_list, style) --or 1
 	local index = style_index + 1
 
 	if index > #style_list then index = 1 end
@@ -32,7 +32,7 @@ end
 -- @param style, str: 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
 function set_onedark(style)
 	style = style or "darker"
-	local bg_transparency = vim.g.onedark_config.transparent
+	-- local bg_transparency = vim.g.onedark_config.transparent
 
 	require('onedark').setup({
 		disable_background = true,
@@ -54,14 +54,8 @@ end
 -- SET colorscheme to 'tokyonight'
 -- @param style, str: 'night', 'dusk', 'moon', 'day'
 function set_tokyo()
-	-- vim.g.tokyo_style_list = { 'night', 'moon', 'dusk', 'day' }
 	style_list = { 'night', 'moon', 'dusk', 'day' }
-	-- local style = require("tokyonight.config").options.style
-	-- local style_index = table.find(style_list, style) --or 1
-	-- local index = style_index + 1
-	-- if index > #style_list then index = 1 end
-	-- style = style_list[index]
-	local style = toggle_style("tokyonight", style_list)
+	local style = Toggle_style("tokyonight", style_list)
 	print('set_tokyof style:', style)
 
 	local transparent = require("tokyonight.config").options.transparent
@@ -105,12 +99,12 @@ local toggle_transparency = function()
 	vim.cmd.colorscheme(colorscheme)
 end
 
--- vim.keymap.set("n", "<F9>", function()toggle_style("tokyonight", { 'night', 'moon', 'dusk', 'day' })
--- vim.keymap.set("n", "<F9>", function()toggle_style("onedark", { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' })
+-- vim.keymap.set("n", "<F9>", function()Toggle_style("tokyonight", { 'night', 'moon', 'dusk', 'day' })
+-- vim.keymap.set("n", "<F9>", function()Toggle_style("onedark", { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' })
 -- end)
 vim.keymap.set("n", "<F10>", function() toggle_transparency() end)
 vim.keymap.set("n", "<F11>", function() set_tokyo() end)
 -- <F12> sets onedark colorscheme and toggles the different styles
 
-print('colors.lua cs:', vim.g.color_name)
+print('colors.lua cs:', vim.g.colors_name)
 set_onedark("darker")
