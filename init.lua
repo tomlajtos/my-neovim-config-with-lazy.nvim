@@ -10,3 +10,5 @@ load('user.plugins')
 load('user.colors')
 
 pcall(vim.cmd.colorscheme, 'onedark')
+-- vim.cmd.colorscheme('onedark')
+-- set_onedark()
