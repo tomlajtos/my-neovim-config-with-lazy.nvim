@@ -1,14 +1,6 @@
 local M = {}
 
-M.map= function(mode, lhs, rhs, desc, plugin)
-	-- function M.setkey(mode, lhs, rhs, desc, plugin)
-	if plugin then
-		desc = plugin .. ": " .. desc
-	end
-	vim.keymap.set(mode, lhs, rhs, { desc = desc })
-end
-
-local map = M.map
+local map = require("user.utils").map
 
 -- Set leader to "<space>"
 vim.g.mapleader = ' '

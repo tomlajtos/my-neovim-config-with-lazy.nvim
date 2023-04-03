@@ -7,7 +7,7 @@ Plugin.dependencies = {
 function Plugin.init()
 	local mark = require("harpoon.mark")
 	local ui = require("harpoon.ui")
-	local map = require("user/keymaps").map
+	local map = require("user.utils").map
 
 	map("n", "<C-e>", ui.toggle_quick_menu, "toggle quick nav-menu", Plugin.name)
 	map("n", "<leader>a", mark.add_file, "[a]dd file to quick nav-menu", Plugin.name)
