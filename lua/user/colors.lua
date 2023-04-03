@@ -110,7 +110,7 @@ end
 -- set keymaps with map(mode, lhs, rhs, desc, plugin*) *optional
 local map = require("user/keymaps").map
 
-map("n", "<F9>", function() toggle_transparency() end, "toggle bg transparency")
+map("n", "<c-F9>", function() toggle_transparency() end, "toggle bg transparency")
 map("n", "<F10>", function() vim.cmd.colorscheme('darkplus') end, "Set 'darkplus'", "Colorscheme")
 map("n", "<F11>", function() Set_tokyo() end, "Set 'tokyonight'", "Colorscheme")
 map("n", "<F12>", function() Set_onedark() end, "Set 'onedark'", "Colorscheme")
