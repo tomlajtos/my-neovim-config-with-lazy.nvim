@@ -9,4 +9,4 @@ load('user.keymaps')
 load('user.plugins')
 load('user.colors')
 
--- pcall(vim.cmd.colorscheme, 'onedark')
+-- pcall(vim.cmd.colorscheme, 'carbonfox')

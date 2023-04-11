@@ -8,7 +8,7 @@ local Plugins = {
   {'tpope/vim-sleuth'},
   -- Themes
   {'lunarvim/darkplus.nvim'},
-  {'rebelot/kanagawa.nvim'},
+  {'EdenEast/nightfox.nvim'},
   {'navarasu/onedark.nvim'},
   {'folke/tokyonight.nvim'},
 }
