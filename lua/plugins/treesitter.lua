@@ -9,6 +9,7 @@ Plugin.opts = {
 	ensure_installed = {
 		'bash',
 		'c',
+		'comment',
 		'css',
 		'gitcommit',
 		'html',
