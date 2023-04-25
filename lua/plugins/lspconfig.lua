@@ -103,7 +103,7 @@ function user.setup_mason()
 			-- LANGUAGE SERVERS
 			'bashls',
 			'cssls',
-			'eslint',
+			-- 'eslint',
 			'html',
 			'jsonls',
 			'lua_ls',
